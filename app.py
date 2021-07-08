@@ -1,11 +1,12 @@
 from flask import Flask
 from uuid import uuid4
 import json
+import os
 
 
 import pymongo
 
-conn_str = ''
+conn_str = os.environ.get('MONGODB')
 
 client = pymongo.MongoClient(conn_str, serverSelectionTimeoutMS=5000)
 
